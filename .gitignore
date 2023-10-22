@@ -1,0 +1,8 @@
+.DS_Store
+access.txt
+error.txt
+/myenv
+/__pycache__
+/sterling/__pycache__
+/finfit/__pycache__
+/log

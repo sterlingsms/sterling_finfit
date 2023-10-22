@@ -1,0 +1,14 @@
+[Unit]
+Description=Sterling FinFit Flask Service
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/sterling_finfit
+Environment="PATH=/sterling_finfit/myenv/bin"
+ExecStart=/sterling_finfit/myenv/bin/gunicorn --workers 4 --bind 0.0.0.0:80 wsgi:app --access-logfile /sterling_finfit/access.log --error-logfile /sterling_finfit/error.log
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
